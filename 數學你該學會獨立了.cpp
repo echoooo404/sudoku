@@ -415,7 +415,8 @@ int main()
     initialize();
     
     while (cin >> c)
-    {
+    {	 
+	 
         action_ok = false;
         if (is_moving_action(c))
         {
@@ -428,7 +429,9 @@ int main()
             action_ok = true;
             fill_number(c-48);
         }
-
+        
+		print_board();
+		
         if (c == 'Q' || c == 'q')break;
             
         if (c == 'K' || c == 'k'){ action_ok = true; print_solution(solution);} 
@@ -442,7 +445,6 @@ int main()
         if (!action_ok)
             cout << get_styled_text("!!! Invalid action !!!", "R");
         
-		print_board();
     }
 
     return 0;
